@@ -21,7 +21,7 @@ extension EmojiDetailViewController: UITextFieldDelegate {
         activeField = textField
         return true
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
