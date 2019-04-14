@@ -41,8 +41,10 @@ extension EmojiDetailViewController {
         nameTextField.resignFirstResponder()
         descriptionTextField.resignFirstResponder()
         usageTextField.resignFirstResponder()
-
-        scrollView.contentOffset = CGPoint.zero
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.scrollView.contentOffset = CGPoint.zero
+        })
     }
     
 }
