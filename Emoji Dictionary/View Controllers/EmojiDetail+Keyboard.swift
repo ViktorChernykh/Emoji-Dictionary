@@ -23,12 +23,11 @@ extension EmojiDetailViewController {
         guard let userInfo = notification.userInfo as? [String: AnyObject],
             let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
-        keyboardHeight = keyboardFrame.height
+        let keyboardHeight = keyboardFrame.height
         let distanceToBottom = scrollView.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
         
-        let scrollHight = keyboardHeight! - distanceToBottom
+        let scrollHight = keyboardHeight - distanceToBottom
         if scrollHight > 0 {
-            lastScroll = scrollHight
             UIView.animate(withDuration: 0.3, animations: {
                 self.scrollView.contentOffset = CGPoint(x: 0, y: scrollHight + 10)
             })

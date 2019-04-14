@@ -18,11 +18,9 @@ class EmojiDetailViewController: UIViewController {
     @IBOutlet weak var bottomconstraint: NSLayoutConstraint!
 
     var emoji: Emoji?
-    var indexPath: IndexPath!
+    var indexPath: IndexPath?
     
     var activeField: UITextField?
-    var lastScroll: CGFloat!
-    var keyboardHeight: CGFloat!
     var baseBottomConstraint: CGFloat!
     
     override func viewDidLoad() {
