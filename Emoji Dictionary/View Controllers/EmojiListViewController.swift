@@ -42,7 +42,7 @@ extension EmojiListViewController {
         guard let controller = segue.source as? EmojiDetailViewController else { return }
         guard let emoji = controller.emoji else { return }
         
-        if let indexPath = controller.indexPath {
+        if let indexPath = tableView.indexPathForSelectedRow {
             emojis[indexPath.row] = emoji
             tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
         } else {
@@ -56,9 +56,8 @@ extension EmojiListViewController {
         guard segue.identifier == "EmojiEditeSegue" else { return }
         guard let controller = segue.destination as? EmojiDetailViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        
+
         controller.emoji = emojis[indexPath.row]
-        controller.indexPath = indexPath
         controller.title = "Edite"
     }
 }

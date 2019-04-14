@@ -18,7 +18,6 @@ class EmojiDetailViewController: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     var emoji: Emoji?
-    var indexPath: IndexPath?
     
     var activeField: UITextField?
     var baseBottomConstraint: CGFloat!
@@ -76,8 +75,7 @@ class EmojiDetailViewController: UIViewController {
 // MARK: - Navigation
 extension EmojiDetailViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SaveSegue" {
-            saveEmoji()
-        }
+        guard segue.identifier == "SaveSegue" else { return }
+        saveEmoji()
     }
 }
