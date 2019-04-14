@@ -232,7 +232,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bottomconstraint" destination="w8l-lx-8YA" id="KRi-11-JFY"/>
+                        <outlet property="bottomConstraint" destination="w8l-lx-8YA" id="tjp-cP-lIy"/>
                         <outlet property="descriptionTextField" destination="O3T-Iv-g67" id="cZj-7c-bAB"/>
                         <outlet property="nameTextField" destination="OZu-KF-PWD" id="tdG-2A-aFZ"/>
                         <outlet property="saveButton" destination="Dds-rz-bga" id="JCh-FY-zqQ"/>

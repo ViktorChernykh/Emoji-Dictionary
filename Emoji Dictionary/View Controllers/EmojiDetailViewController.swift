@@ -15,7 +15,7 @@ class EmojiDetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var usageTextField: UITextField!
-    @IBOutlet weak var bottomconstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     var emoji: Emoji?
     var indexPath: IndexPath?
@@ -31,9 +31,7 @@ class EmojiDetailViewController: UIViewController {
         descriptionTextField.delegate = self
         usageTextField.delegate = self
         
-        baseBottomConstraint = bottomconstraint.constant
-        
-        view.isUserInteractionEnabled = true
+        baseBottomConstraint = bottomConstraint.constant
     }
     
     override func viewWillAppear(_ animated: Bool) {

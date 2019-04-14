@@ -32,7 +32,7 @@ extension EmojiDetailViewController {
                 self.scrollView.contentOffset = CGPoint(x: 0, y: scrollHight + 10)
             })
         }
-        bottomconstraint.constant = baseBottomConstraint + 10
+        bottomConstraint.constant = baseBottomConstraint + 10
     }
     
     // MARK: - @IBAction
@@ -44,7 +44,7 @@ extension EmojiDetailViewController {
         
         UIView.animate(withDuration: 0.3, animations: {
             self.scrollView.contentOffset = CGPoint.zero
-            self.bottomconstraint.constant = CGFloat.zero
+            self.bottomConstraint.constant = CGFloat.zero
         })
     }
     
