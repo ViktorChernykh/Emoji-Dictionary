@@ -63,14 +63,6 @@ class EmojiDetailViewController: UIViewController {
         emoji?.description = descriptionTextField.text ?? ""
         emoji?.usage = usageTextField.text ?? ""
     }
-    
-    func clearEmoji() {
-        emoji = nil
-        symbolTextField.text = ""
-        nameTextField.text = ""
-        descriptionTextField.text = ""
-        usageTextField.text = ""
-    }
 
     func updateUI() {
         saveButton.isEnabled = areFieldsReady()
@@ -86,9 +78,6 @@ extension EmojiDetailViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SaveSegue" {
             saveEmoji()
-        }
-        if segue.identifier == "CancelSegue" {
-            
         }
     }
 }
