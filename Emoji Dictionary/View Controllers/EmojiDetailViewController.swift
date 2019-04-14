@@ -53,7 +53,6 @@ class EmojiDetailViewController: UIViewController {
         removeKeyboardNotifications()
     }
 
-    
     func areFieldsReady() -> Bool {
         return !symbolTextField.isEmpty && !nameTextField.isEmpty && !descriptionTextField.isEmpty && !usageTextField.isEmpty
     }
@@ -63,6 +62,14 @@ class EmojiDetailViewController: UIViewController {
         emoji?.name = nameTextField.text ?? ""
         emoji?.description = descriptionTextField.text ?? ""
         emoji?.usage = usageTextField.text ?? ""
+    }
+    
+    func clearEmoji() {
+        emoji = nil
+        symbolTextField.text = ""
+        nameTextField.text = ""
+        descriptionTextField.text = ""
+        usageTextField.text = ""
     }
 
     func updateUI() {
@@ -77,6 +84,11 @@ class EmojiDetailViewController: UIViewController {
 // MARK: - Navigation
 extension EmojiDetailViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        saveEmoji()
+        if segue.identifier == "SaveSegue" {
+            saveEmoji()
+        }
+        if segue.identifier == "CancelSegue" {
+            
+        }
     }
 }

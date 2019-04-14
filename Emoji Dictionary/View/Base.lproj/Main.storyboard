@@ -221,12 +221,12 @@
                     <navigationItem key="navigationItem" title="Add" id="xpd-Ki-PYt">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XgH-gl-wdS">
                             <connections>
-                                <segue destination="k0X-Ef-5Vh" kind="unwind" identifier="CancelSegue" unwindAction="unwindWithSegue:" id="Upx-za-94p"/>
+                                <segue destination="k0X-Ef-5Vh" kind="unwind" unwindAction="unwindWithSegue:" id="tUK-Zq-zbB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Dds-rz-bga">
                             <connections>
-                                <segue destination="k0X-Ef-5Vh" kind="unwind" identifier="SaveSegue" unwindAction="unwindWithSegue:" id="9Os-l2-MBn"/>
+                                <segue destination="k0X-Ef-5Vh" kind="unwind" identifier="SaveSegue" unwindAction="unwindWithSegue:" id="uts-Nb-cIu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

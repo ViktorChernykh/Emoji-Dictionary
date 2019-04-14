@@ -37,7 +37,7 @@ extension EmojiListViewController {
 
 // MARK: - Navigation
 extension EmojiListViewController {
-    @IBAction func unwind(segue: UIStoryboardSegue) {      
+    @IBAction func unwind(segue: UIStoryboardSegue) {
         guard segue.identifier == "SaveSegue" else { return }
         guard let controller = segue.source as? EmojiDetailViewController else { return }
         guard let emoji = controller.emoji else { return }
