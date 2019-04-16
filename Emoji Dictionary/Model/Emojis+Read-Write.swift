@@ -20,7 +20,7 @@ extension Emojis {
     }
     func write(to url: URL) {
         if let encodedEmojis = self.encoded {
-            try? encodedEmojis.write(to: url, options: .noFileProtection)
+            try? encodedEmojis.write(to: url, options: [.noFileProtection, .atomic])
         }
     }
 }
