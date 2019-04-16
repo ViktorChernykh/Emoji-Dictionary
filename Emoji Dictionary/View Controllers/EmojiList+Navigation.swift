@@ -22,8 +22,8 @@ extension EmojiListViewController {
             emojis.append(emoji)
             tableView.insertRows(at: [indexPath], with: .automatic)
         }
-        let archiveURL = dataFileURL()
-        emojis.write(to: archiveURL)
+        let url = dataFileURL()
+        emojis.write(to: url)
         
     }
     
