@@ -14,7 +14,7 @@ extension Emojis {
         return "Словарь Эмодзи"
     }
 
-    static func loadSample() -> Emojis {
+    func loadSample() -> Emojis {
         return [
             Emoji(symbol: "👻", name: "Привидение", description: "Серенькое привидение", usage: "Напуган"),
             Emoji(symbol: "🤓", name: "Ботаник", description: "Смайлик в очках", usage: "Умный"),

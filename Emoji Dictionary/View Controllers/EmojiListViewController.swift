@@ -17,11 +17,11 @@ class EmojiListViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        let archiveURL = dataFileURL()
-        if let arrayEmojis = emojis.read(from: archiveURL) {
+        let url = dataFileURL()
+        if let arrayEmojis = emojis.read(from: url) {
             emojis = arrayEmojis
         } else {
-            emojis = Emojis.loadSample()
+            emojis = emojis.loadSample()
         }
         navigationItem.title = emojis.title
         navigationItem.leftBarButtonItem = editButtonItem
