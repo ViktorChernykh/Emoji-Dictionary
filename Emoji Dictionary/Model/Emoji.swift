@@ -6,12 +6,12 @@
 //  Copyright © 2019 Viktor Chernykh. All rights reserved.
 //
 
-class Emoji {
+class Emoji: Codable {
     var symbol: String
     var name: String
     var description: String
     var usage: String
-    
+        
     init(symbol: String = "", name: String = "", description: String = "", usage: String = "") {
         self.symbol = symbol
         self.name = name

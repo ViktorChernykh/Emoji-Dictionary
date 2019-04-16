@@ -5,6 +5,7 @@
 //  Created by Viktor on 12/04/2019.
 //  Copyright © 2019 Viktor Chernykh. All rights reserved.
 //
+import Foundation
 
 typealias Emojis = [Emoji]
 
@@ -12,7 +13,7 @@ extension Emojis {
     var title: String {
         return "Словарь Эмодзи"
     }
-    
+
     static func loadSample() -> Emojis {
         return [
             Emoji(symbol: "👻", name: "Привидение", description: "Серенькое привидение", usage: "Напуган"),

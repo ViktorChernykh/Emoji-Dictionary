@@ -20,6 +20,9 @@
 		77C0C04D22607E4200531A73 /* EmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0C04C22607E4200531A73 /* EmojiCell.swift */; };
 		77C0C04F22607E9C00531A73 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0C04E22607E9C00531A73 /* Emoji.swift */; };
 		77C0C05122607EAF00531A73 /* Emojis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0C05022607EAF00531A73 /* Emojis.swift */; };
+		77CBBED122663BE3007CB125 /* Emojis+Read-Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBED022663BE3007CB125 /* Emojis+Read-Write.swift */; };
+		77CBBED5226641AA007CB125 /* Emojis+Encoder+Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBED4226641AA007CB125 /* Emojis+Encoder+Decoder.swift */; };
+		77CBBED722664256007CB125 /* EmojiList+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBED622664256007CB125 /* EmojiList+Navigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		77C0C04C22607E4200531A73 /* EmojiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
 		77C0C04E22607E9C00531A73 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		77C0C05022607EAF00531A73 /* Emojis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emojis.swift; sourceTree = "<group>"; };
+		77CBBED022663BE3007CB125 /* Emojis+Read-Write.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Emojis+Read-Write.swift"; sourceTree = "<group>"; };
+		77CBBED4226641AA007CB125 /* Emojis+Encoder+Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Emojis+Encoder+Decoder.swift"; sourceTree = "<group>"; };
+		77CBBED622664256007CB125 /* EmojiList+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojiList+Navigation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				77C0C031226079F600531A73 /* EmojiListViewController.swift */,
+				77CBBED622664256007CB125 /* EmojiList+Navigation.swift */,
 				77C0C04622607D1000531A73 /* EmojiDetailViewController.swift */,
 				7766C5B02260A17B0095070F /* EmojiDetail+Keyboard.swift */,
 				7766C5B22260D1B30095070F /* EmojiDetail+UITextFieldDelegate.swift */,
@@ -104,6 +111,8 @@
 			children = (
 				77C0C04E22607E9C00531A73 /* Emoji.swift */,
 				77C0C05022607EAF00531A73 /* Emojis.swift */,
+				77CBBED4226641AA007CB125 /* Emojis+Encoder+Decoder.swift */,
+				77CBBED022663BE3007CB125 /* Emojis+Read-Write.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,13 +219,16 @@
 				77C0C04D22607E4200531A73 /* EmojiCell.swift in Sources */,
 				77C0C04B22607DF200531A73 /* UITextField+Extension.swift in Sources */,
 				77C0C04922607D7600531A73 /* TableViewCellConfigurator.swift in Sources */,
+				77CBBED722664256007CB125 /* EmojiList+Navigation.swift in Sources */,
 				77C0C032226079F600531A73 /* EmojiListViewController.swift in Sources */,
 				7766C5B32260D1B30095070F /* EmojiDetail+UITextFieldDelegate.swift in Sources */,
 				77C0C04F22607E9C00531A73 /* Emoji.swift in Sources */,
 				77C0C04722607D1000531A73 /* EmojiDetailViewController.swift in Sources */,
+				77CBBED5226641AA007CB125 /* Emojis+Encoder+Decoder.swift in Sources */,
 				7766C5B12260A17B0095070F /* EmojiDetail+Keyboard.swift in Sources */,
 				77C0C05122607EAF00531A73 /* Emojis.swift in Sources */,
 				77C0C030226079F600531A73 /* AppDelegate.swift in Sources */,
+				77CBBED122663BE3007CB125 /* Emojis+Read-Write.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
