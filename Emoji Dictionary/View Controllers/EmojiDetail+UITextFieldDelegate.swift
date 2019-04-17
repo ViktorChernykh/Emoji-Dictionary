@@ -12,9 +12,24 @@ extension EmojiDetailViewController: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if textField.tag != 0 { return true }
-        if ((textField.text?.count == 0) || (string == "\n")) { return true }
-        return false
+        switch textField {
+        case symbolTextField:
+            if range.location > 0 { return false }
+            
+        case nameTextField:
+            if range.location > 32 { return false }
+            
+        case descriptionTextField:
+            if range.location > 80 { return false }
+            
+        case usageTextField:
+            if range.location > 80 { return false }
+            
+        default:
+            break
+        }
+        
+        return true
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -24,21 +39,21 @@ extension EmojiDetailViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
-        let textFieldTag = textField.tag
-        switch textFieldTag {
-        case 0:
+
+        switch textField {
+        case symbolTextField:
             nameTextField.becomeFirstResponder()
-        case 1:
+        case nameTextField:
             descriptionTextField.becomeFirstResponder()
-        case 2:
+        case descriptionTextField:
             usageTextField.becomeFirstResponder()
         default:
             UIView.animate(withDuration: 0.2, animations: {
                 self.scrollView.contentOffset = CGPoint.zero
-                self.bottomConstraint.constant = CGFloat.zero
+                self.bottomConstraint.constant = CGFloat(3)
             })
         }
+
         activeField = nil
         return true
     }

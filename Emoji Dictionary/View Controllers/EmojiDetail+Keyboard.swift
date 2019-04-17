@@ -24,27 +24,28 @@ extension EmojiDetailViewController {
             let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
         let keyboardHeight = keyboardFrame.height
-        let distanceToBottom = scrollView.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
+        let distanceToBottom = scrollView.frame.size.height
+                    - (activeField?.superview!.frame.origin.y)!
+                    - (activeField?.frame.origin.y)!
+                    - (activeField?.frame.size.height)!
         
         let scrollHight = keyboardHeight - distanceToBottom
         if scrollHight > 0 {
             UIView.animate(withDuration: 0.3, animations: {
-                self.scrollView.contentOffset = CGPoint(x: 0, y: scrollHight + 10)
+                self.scrollView.contentOffset = CGPoint(x: 0, y: scrollHight + 12)
             })
         }
-        bottomConstraint.constant = baseBottomConstraint + 10
+        bottomConstraint.constant = keyboardHeight
     }
     
     // MARK: - @IBAction
     @IBAction func onTapGestureRecognized(_ sender: AnyObject) {
-        symbolTextField.resignFirstResponder()
-        nameTextField.resignFirstResponder()
-        descriptionTextField.resignFirstResponder()
-        usageTextField.resignFirstResponder()
+        guard let activeField = activeField else { return }
+        activeField.resignFirstResponder()
         
         UIView.animate(withDuration: 0.3, animations: {
             self.scrollView.contentOffset = CGPoint.zero
-            self.bottomConstraint.constant = CGFloat.zero
+            self.bottomConstraint.constant = CGFloat(3)
         })
     }
     
