@@ -50,7 +50,7 @@ extension EmojiDetailViewController: UITextFieldDelegate {
         default:
             UIView.animate(withDuration: 0.2, animations: {
                 self.scrollView.contentOffset = CGPoint.zero
-                self.bottomConstraint.constant = CGFloat(3)
+                self.bottomConstraint.constant = CGFloat.zero
             })
         }
 

@@ -20,28 +20,31 @@ extension EmojiDetailViewController {
     
     // MARK: - Custom Methods
     @objc func keyboardWillShow(_ notification: Notification) {
-        guard let userInfo = notification.userInfo as? [String: AnyObject],
-            let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        guard let userInfo = notification.userInfo else { return }
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] else { return }
+        guard let keyboardFrameValue = keyboardFrame as? NSValue else { return }
         
-        let keyboardHeight = keyboardFrame.height
-        let distanceToBottom = scrollView.frame.size.height
-                    - (activeField?.superview!.frame.origin.y)!
-                    - (activeField?.frame.origin.y)!
-                    - (activeField?.frame.size.height)!
+        let keyboardFrameSize = keyboardFrameValue.cgRectValue
         
-        let scrollHight = keyboardHeight - distanceToBottom
+        let distanceToBottom = scrollView.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
+        
+        let scrollHight = keyboardFrameSize.height + CGFloat(10) - distanceToBottom
+        print(scrollHight, keyboardFrameSize.height, distanceToBottom)
+        
         if scrollHight > 0 {
             UIView.animate(withDuration: 0.3, animations: {
-                self.scrollView.contentOffset = CGPoint(x: 0, y: scrollHight + 12)
+                self.scrollView.contentOffset = CGPoint(x: 0, y: scrollHight)
+                self.bottomConstraint.constant = keyboardFrameSize.height
             })
         }
-        bottomConstraint.constant = keyboardHeight
     }
     
     // MARK: - @IBAction
-    @IBAction func onTapGestureRecognized(_ sender: AnyObject) {
-        guard let activeField = activeField else { return }
-        activeField.resignFirstResponder()
+    @IBAction func onTapGestureRecognized(_ sender: AnyObject) {       
+        symbolTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
+        descriptionTextField.resignFirstResponder()
+        usageTextField.resignFirstResponder()
         
         UIView.animate(withDuration: 0.3, animations: {
             self.scrollView.contentOffset = CGPoint.zero

@@ -20,7 +20,6 @@ class EmojiDetailViewController: UIViewController {
     var emoji: Emoji?
     
     var activeField: UITextField?
-    var baseBottomConstraint: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,6 @@ class EmojiDetailViewController: UIViewController {
         nameTextField.delegate = self
         descriptionTextField.delegate = self
         usageTextField.delegate = self
-        
-        baseBottomConstraint = bottomConstraint.constant
     }
     
     override func viewWillAppear(_ animated: Bool) {
