@@ -28,7 +28,7 @@ extension EmojiDetailViewController {
         
         let distanceToBottom = scrollView.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
         
-        let scrollHight = keyboardFrameSize.height + CGFloat(10) - distanceToBottom
+        let scrollHight = keyboardFrameSize.height + CGFloat(5) - distanceToBottom
         
         if scrollHight > 0 {
             UIView.animate(withDuration: 0.3, animations: {
@@ -47,7 +47,7 @@ extension EmojiDetailViewController {
         
         UIView.animate(withDuration: 0.3, animations: {
             self.scrollView.contentOffset = CGPoint.zero
-            self.bottomConstraint.constant = CGFloat(3)
+            self.bottomConstraint.constant = CGFloat.zero
         })
     }
     
