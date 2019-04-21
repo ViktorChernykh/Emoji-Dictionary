@@ -29,7 +29,6 @@ extension EmojiDetailViewController {
         let distanceToBottom = scrollView.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
         
         let scrollHight = keyboardFrameSize.height + CGFloat(10) - distanceToBottom
-        print(scrollHight, keyboardFrameSize.height, distanceToBottom)
         
         if scrollHight > 0 {
             UIView.animate(withDuration: 0.3, animations: {
@@ -40,7 +39,7 @@ extension EmojiDetailViewController {
     }
     
     // MARK: - @IBAction
-    @IBAction func onTapGestureRecognized(_ sender: AnyObject) {       
+    @IBAction func onTapGestureRecognized(_ sender: AnyObject) {
         symbolTextField.resignFirstResponder()
         nameTextField.resignFirstResponder()
         descriptionTextField.resignFirstResponder()
